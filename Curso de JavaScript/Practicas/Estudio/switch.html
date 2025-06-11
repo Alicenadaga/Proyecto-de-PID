@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var a = parseInt(prompt("Ingresa un numero"));
+        var b = parseInt(prompt("Ingresa un segundo numero"));
+        var c = prompt("Ingresa un operador");
+        
+        switch(c){
+            case '*':
+            document.write("La multiplicacion es: " + (a*b));
+            break;
+
+            case '/':
+            document.write("La division es: " + (a/b));
+            break;
+
+            case'+':
+            document.write("La suma es: " + (a+b));
+            break;
+
+            case '-':
+            document.write("La resta es: " + (a-b));
+            break;
+
+            default:
+            document.write("Este operador no esta dispnible");
+            break;
+        }
+
+    </script>
+</body>
+</html>

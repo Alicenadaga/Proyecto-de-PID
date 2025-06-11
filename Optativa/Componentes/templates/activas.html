@@ -1,0 +1,81 @@
+<!-- activas.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Motorinas en Carga</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f3f3;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        table {
+            margin: 0 auto;
+            width: 80%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+            border-bottom: 1px solid #ccc;
+        }
+        th {
+            background-color: #27ae60;
+            color: white;
+        }
+        tr:hover {
+            background-color: #f2f2f2;
+        }
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #27ae60;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        .boton-volver {
+            display: inline-block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #27ae60;
+            color: white;
+            font-weight: bold;
+            border-radius: 8px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <h1>🔌 Motorinas Actualmente en Carga</h1>
+
+    {% if activas %}
+    <table>
+        <tr>
+            <th>Nombre</th>
+            <th>Tarjeta</th>
+            <th>Inicio de Carga</th>
+        </tr>
+        {% for nombre, tarjeta, fecha in activas %}
+        <tr>
+            <td>{{ nombre }}</td>
+            <td>{{ tarjeta }}</td>
+            <td>{{ fecha }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    {% else %}
+    <p style="text-align:center; color:#999;">No hay motorinas cargando actualmente.</p>
+    {% endif %}
+
+    <a href="/" class="boton-volver">⬅️ Volver a la página principal</a>
+    <a href="/activas" class="boton-volver">🔍 Ver motorinas en carga</a>
+</body>
+</html>
